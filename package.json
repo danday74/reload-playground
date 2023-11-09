@@ -1,0 +1,13 @@
+{
+  "name": "reload",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "node watch-reload.js"
+  },
+  "dependencies": {
+    "watchpack": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/watchpack": "^2.4.3"
+  }
+}
