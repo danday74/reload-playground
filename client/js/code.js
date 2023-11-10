@@ -8,5 +8,5 @@ const onDoIt = () => {
 }
 
 const onWsSend = () => {
-  wsServiceSend('hello', 'message from client')
+  wsSend('hello', 'message from client')
 }
