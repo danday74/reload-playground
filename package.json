@@ -5,9 +5,11 @@
     "watch": "node watch-reload.js"
   },
   "dependencies": {
-    "watchpack": "^2.4.0"
+    "watchpack": "^2.4.0",
+    "ws": "^8.14.2"
   },
   "devDependencies": {
-    "@types/watchpack": "^2.4.3"
+    "@types/watchpack": "^2.4.3",
+    "@types/ws": "^8.5.9"
   }
 }
