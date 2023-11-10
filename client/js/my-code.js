@@ -1,3 +1,5 @@
+console.log('LOADING CODE 1')
+
 const origColor = 'rgb(2, 115, 206)'
 
 const onDoIt = () => {

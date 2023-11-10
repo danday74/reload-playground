@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reload</title>
+  <title>reload</title>
+
+  <script src="client/js/reload.js"></script> <!-- provides reload functions -->
+
   <link rel="stylesheet" href="client/css/styles.css">
+  <!-- <script>cssReload()</script> --> <!-- needed if web server caching is enabled -->
+
   <script src="client/js/websocket.js"></script>
-  <script src="client/js/code.js"></script>
+  <script src="client/js/my-code.js"></script>
 </head>
 <body>
-<div class="block">
-  <span>herro</span>
-</div>
+<div class="block">herro</div>
 <button onclick="onDoIt()">do it</button>
 <button onclick="onWsSend()">ws send</button>
 </body>
