@@ -1,20 +1,20 @@
+const Websocket = require('./server/js/websocket.class')
 const Watchpack = require('watchpack')
-const fs = require('fs')
+const ignored = require('./server/js/get-git-ignored')
 
-const gitIgnored = fs.readFileSync('.gitignore', 'utf8')
-const ignored = gitIgnored.split('\n').map(file => file.trim()).filter(file => file !== '')
+const ws = new Websocket()
+const wp = new Watchpack({ ignored: ['**/.git', ...ignored] })
 
-const wp = new Watchpack({
-  ignored: ['**/.git', ...ignored]
-})
+ws.init().then(() => {
+  wp.watch({
+    files: [],
+    directories: [
+      'client',
+      'server'
+    ]
+  })
 
-wp.watch({
-  files: [],
-  directories: ['css', 'js']
-})
-
-wp.on('change', () => {})
-
-wp.on('aggregated', () => {
-  console.log('aggregated')
+  wp.on('aggregated', () => {
+    ws.send('reload')
+  })
 })
