@@ -16,12 +16,12 @@ THEN execute `npm run watch`
 
 [watchpack](https://www.npmjs.com/package/watchpack) monitors for file changes
 
-A websockets (WS) server is started
+A websocket (WS) server is started
 
 The WS server informs clients:
 
 * when a file changes
-* what type of file was changed - e.g. CSS, JS
+* what type of file was changed - e.g. JS, CSS
 
 If the file type changed was:
 
