@@ -14,7 +14,9 @@ ws.init().then(() => {
     ]
   })
 
-  wp.on('aggregated', () => {
-    ws.send('reload')
+  wp.on('change', (filePath/* mtime, explanation */) => {
+    if (filePath.endsWith('css')) ws.send('reload-css')
+    else if (filePath.endsWith('js')) ws.send('reload-js')
+    else if (!filePath.endsWith('~')) ws.send('reload')
   })
 })
